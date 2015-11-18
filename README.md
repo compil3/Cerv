@@ -14,3 +14,5 @@ IDE: Intellij IDEA 15.0.1
 The following are required for the app to function on your desktop.
 
 [Java 8+](https://www.java.com/en/)
+
+Again please report any issues.
