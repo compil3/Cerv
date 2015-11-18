@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  */
 public class Organization {
 
-    public static void returnOrganization(MasterController controller, URL url, HttpsURLConnection connection) throws SSLPeerUnverifiedException {
+    public static void returnOrganization(MasterController controller, URL url, HttpsURLConnection connection, Error errorAlert) throws SSLPeerUnverifiedException {
         try {
             Certificate[] certs = connection.getServerCertificates();
             for (Certificate cert : certs) {
@@ -36,7 +36,7 @@ public class Organization {
             }
 
         } catch (SSLPeerUnverifiedException e) {
-            System.out.println("Failed: " + e.getMessage());
+            errorAlert.errorAlert("Failed to retrieve Organization information", e);
         }
     }
 }

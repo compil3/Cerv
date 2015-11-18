@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * Time: 12:41 PM
  */
 public class CommonName {
-    public static void returnCommonName(MasterController controller, URL url, HttpsURLConnection connection)  throws IOException {
+    public static void returnCommonName(MasterController controller, URL url, HttpsURLConnection connection, Error errorAlert)  throws IOException {
         try {
             Certificate[] certs = connection.getServerCertificates();
             for (Certificate cert : certs) {
@@ -36,7 +36,7 @@ public class CommonName {
                 }
             }
         }catch (IOException ex) {
-            Logger.getLogger(CommonName.class.getName()).log(Level.SEVERE, null, ex);
+            errorAlert.errorAlert("Connection error", ex);
         }
     }
 }

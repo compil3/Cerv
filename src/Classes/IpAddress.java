@@ -16,14 +16,14 @@ import java.util.logging.Logger;
  */
 public class IpAddress {
 
-    public static void returnIpAddress(MasterController controller, String url) {
+    public static void returnIpAddress(MasterController controller, String url, Error error) {
         try {
             Inet4Address address = (Inet4Address) Inet4Address.getByName(url);
             System.out.println("IP Address From Method: " + address.getHostAddress());
             controller.setIpAddress(address.getHostAddress());
 
         } catch (IOException ex) {
-            Logger.getLogger(IpAddress.class.getName()).log(Level.SEVERE, null, ex);
+            error.errorAlert("IP Address error", ex);
         }
 
     }

@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("mastergui.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Cerv v.0.0.3");
         primaryStage.setScene(new Scene(root, 966,584 ));
         primaryStage.show();
     }

@@ -17,7 +17,8 @@ import java.util.regex.Pattern;
  * Time: 12:40 PM
  */
 public class Algorithm {
-    public static void returnAlgo(MasterController controller, URL url, HttpsURLConnection connection) throws SSLPeerUnverifiedException {
+
+    public static void returnAlgo(MasterController controller, URL url, HttpsURLConnection connection, Error errorAlert) throws SSLPeerUnverifiedException {
         try {
             Certificate[] certs = connection.getServerCertificates();
             for (Certificate cert : certs) {
@@ -35,7 +36,9 @@ public class Algorithm {
             }
 
         } catch (SSLPeerUnverifiedException e) {
-            System.out.println("Failed: " + e.getMessage());
+            errorAlert.errorAlert("Failed to get common name", e);
+
+
         }
     }
 }

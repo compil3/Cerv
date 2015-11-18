@@ -60,13 +60,15 @@ public class MasterController implements Initializable {
 
     @FXML
     void onSubmitClick(ActionEvent event) throws IOException, CertificateNotYetValidException, CertificateExpiredException {
-        String urlToVerify = userDomain.getText();
+        Error errorAlert = new Error();
         clearAllLabels();
+
+        String urlToVerify = userDomain.getText();
+
 
         URLValidation verifyURL = new URLValidation();
         verifyURL.urlVerifier(urlToVerify);
         URL urlOK = new URL(verifyURL.urlVerifier(urlToVerify));
-        Error errorAlert = new Error();
 
         HttpsURLConnection connection;
         try {
@@ -79,16 +81,15 @@ public class MasterController implements Initializable {
         }
 
 
-        IpAddress.returnIpAddress(this, urlToVerify);
-        CommonName.returnCommonName(this, urlOK, connection);
-        //AlternateNames.returnAltNames(this, urlOK, connection);
-        Organization.returnOrganization(this, urlOK, connection);
-        Location.returnLocation(this, urlOK, connection);
-        SSLSerial.returnSerial(this, urlOK, connection);
-        Algorithm.returnAlgo(this, urlOK, connection);
-        ExpiryDate.returnExpiry(this, urlOK, connection);
-        SSLValidCertificate.returnValid(this, urlOK, connection);
-        System.out.print("CustomHostnameVerifier up next");
+        IpAddress.returnIpAddress(this, urlToVerify, errorAlert);
+        CommonName.returnCommonName(this, urlOK, connection, errorAlert);
+        //AlternateNames.returnAltNames(this, urlOK, connection, errorAlert);
+        Organization.returnOrganization(this, urlOK, connection, errorAlert);
+        Location.returnLocation(this, urlOK, connection, errorAlert);
+        SSLSerial.returnSerial(this, urlOK, connection, errorAlert);
+        Algorithm.returnAlgo(this, urlOK, connection, errorAlert);
+        ExpiryDate.returnExpiry(this, urlOK, connection, errorAlert);
+        SSLValidCertificate.returnValid(this, urlOK, connection, errorAlert);
         CustomHostnameVerifier.returnHostnameVerified(this, connection);
         MXRecord.mxLookup(this, urlToVerify);
         //AlternateNames.returnAltNames(this,urlOK, connection);

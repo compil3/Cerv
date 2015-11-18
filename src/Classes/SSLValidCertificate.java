@@ -18,7 +18,7 @@ import java.security.cert.X509Certificate;
  * Time: 12:42 PM
  */
 public class SSLValidCertificate {
-    public static void returnValid(MasterController controller, URL url, HttpsURLConnection connection) throws SSLPeerUnverifiedException, CertificateNotYetValidException, CertificateExpiredException {
+    public static void returnValid(MasterController controller, URL url, HttpsURLConnection connection, Error errorAlert) throws SSLPeerUnverifiedException, CertificateNotYetValidException, CertificateExpiredException {
         try {
             Certificate[] certs = connection.getServerCertificates();
             for (Certificate cert : certs) {
@@ -38,7 +38,7 @@ public class SSLValidCertificate {
             }
 
         } catch (SSLPeerUnverifiedException e) {
-            System.out.println("Failed: " + e.getMessage());
+            errorAlert.errorAlert("Certificate validation failed.", e);
         }
     }
 }

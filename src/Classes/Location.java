@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * Time: 12:41 PM
  */
 public class Location {
-    public static void returnLocation(MasterController controller, URL url, HttpsURLConnection connection) throws SSLPeerUnverifiedException {
+    public static void returnLocation(MasterController controller, URL url, HttpsURLConnection connection, Error errorAlert) throws SSLPeerUnverifiedException {
         try {
             Certificate[] certs = connection.getServerCertificates();
             for (Certificate cert : certs) {
@@ -35,7 +35,7 @@ public class Location {
             }
 
         } catch (SSLPeerUnverifiedException e) {
-            System.out.println("Failed: " + e.getMessage());
+            errorAlert.errorAlert("Failed to retrieve location information", e);
         }
     }
 }
