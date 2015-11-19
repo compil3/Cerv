@@ -41,7 +41,7 @@
                             <children>
                                 <HBox prefHeight="20.0" prefWidth="222.0">
                                     <children>
-                                        <Label fx:id="validSSL" alignment="TOP_LEFT" text="Label">
+                                        <Label fx:id="validSSL" alignment="TOP_LEFT">
                                             <font>
                                                 <Font name="System Bold" size="14.0" />
                                             </font>
@@ -90,7 +90,7 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="cnNAme" text="Common Name">
+                                        <Label fx:id="cnNAme">
                                             <HBox.margin>
                                                 <Insets top="2.0" />
                                             </HBox.margin>
@@ -106,7 +106,7 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="hostName" text="Hostname">
+                                        <Label fx:id="hostName">
                                             <HBox.margin>
                                                 <Insets top="2.0" />
                                             </HBox.margin>
@@ -126,7 +126,7 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="organizationName" text="Organization">
+                                        <Label fx:id="organizationName">
                                             <HBox.margin>
                                                 <Insets top="2.0" />
                                             </HBox.margin></Label>
@@ -142,7 +142,7 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="sslLocation" text="Location">
+                                        <Label fx:id="sslLocation">
                                             <HBox.margin>
                                                 <Insets top="2.0" />
                                             </HBox.margin></Label>
@@ -161,7 +161,7 @@
                                                 <Insets top="2.0" />
                                             </HBox.margin>
                                         </Label>
-                                        <Label fx:id="sslSerial" text="Serial Number">
+                                        <Label fx:id="sslSerial">
                                             <HBox.margin>
                                                 <Insets top="4.0" />
                                             </HBox.margin></Label>
@@ -177,7 +177,7 @@
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="sslAlgo" text="Signature Alogrithm">
+                                        <Label fx:id="sslAlgo">
                                             <HBox.margin>
                                                 <Insets top="2.0" />
                                             </HBox.margin></Label>

@@ -16,3 +16,5 @@ The following are required for the app to function on your desktop.
 [Java 8+](https://www.java.com/en/)
 
 Again please report any issues.
+
+![Screen](http://i.imgur.com/qT9ub0i.png)
