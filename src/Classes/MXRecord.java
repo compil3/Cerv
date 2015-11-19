@@ -18,6 +18,6 @@ public class MXRecord {
         Record[] records = new Lookup(host, Type.MX).run();
         for (Record record : records) {
             controller.setMXRecord(record.getAdditionalName());
-        }
+       }
     }
 }
